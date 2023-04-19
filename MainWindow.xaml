@@ -1,0 +1,45 @@
+﻿<Window x:Class="DesignPatterns_Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignPatterns_Task4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1"
+              Grid.Column="0">
+            <TextBox Name="TextTB" FontSize="35" KeyUp="TextTB_KeyUp" GotFocus="TextTB_GotFocus">Search Word</TextBox>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Grid.Column="1">
+            <Button FontSize="15" x:Name="Submit" Click="Submit_Click">Submit</Button>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2">
+            <ListBox Name="Hints" SelectionChanged="Hints_SelectionChanged">
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="0"
+              Grid.ColumnSpan="2">
+            <StackPanel>
+                <TextBlock Height="30" Foreground="black" FontSize="20" Width="700"><Run Text="Submitted Words"/></TextBlock>
+                <ListBox x:Name="SubmittedWordsLB" BorderThickness="2" BorderBrush="Black" Height="156" Width="700"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
